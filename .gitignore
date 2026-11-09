@@ -1,0 +1,13 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local Python environments
+.venv/
+venv/
+
+# Local databases and generated logs
+*.db
+*.sqlite3
+*.log

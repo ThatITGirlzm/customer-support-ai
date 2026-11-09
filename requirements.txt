@@ -1,0 +1,5 @@
+# NumPy 2.5.4 requires Python 3.12 or newer.
+numpy==2.5.4
+fastapi==0.162.2
+pydantic==2.14.3
+pytest==9.2.0
