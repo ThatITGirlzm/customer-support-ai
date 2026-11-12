@@ -1,0 +1,99 @@
+{
+  "project_name": "Customer Support AI",
+  "assistant_name": "Averse",
+  "dataset_version": "day3-v1.0.0",
+  "schema_version": "1.0",
+  "collection_date": "2026-11-11",
+  "fixed_intents": [
+    "complaints_process",
+    "scam_fraud_warning",
+    "consumer_rights",
+    "payments_mobile_money",
+    "licensed_institutions",
+    "financial_education",
+    "regulations_directives",
+    "contact_regulator",
+    "human_help_request",
+    "out_of_scope"
+  ],
+  "random_seed": 20261111,
+  "split_shuffle_seeds": {
+    "train": 20261111,
+    "validation": 20261112,
+    "test": 20261113
+  },
+  "split_method": "Curated and stratified by intent and question-family before generation. Family keys appear in annotation_note and no family is assigned across splits. The recorded seed is used only to deterministically shuffle record order within each already-assigned split; it never changes split membership.",
+  "counts_by_split_and_intent": {
+    "train": {
+      "complaints_process": 25,
+      "scam_fraud_warning": 25,
+      "consumer_rights": 25,
+      "payments_mobile_money": 25,
+      "licensed_institutions": 25,
+      "financial_education": 25,
+      "regulations_directives": 25,
+      "contact_regulator": 25,
+      "human_help_request": 25,
+      "out_of_scope": 25
+    },
+    "validation": {
+      "complaints_process": 5,
+      "scam_fraud_warning": 5,
+      "consumer_rights": 5,
+      "payments_mobile_money": 5,
+      "licensed_institutions": 5,
+      "financial_education": 5,
+      "regulations_directives": 5,
+      "contact_regulator": 5,
+      "human_help_request": 5,
+      "out_of_scope": 5
+    },
+    "test": {
+      "complaints_process": 8,
+      "scam_fraud_warning": 8,
+      "consumer_rights": 8,
+      "payments_mobile_money": 8,
+      "licensed_institutions": 8,
+      "financial_education": 8,
+      "regulations_directives": 8,
+      "contact_regulator": 8,
+      "human_help_request": 8,
+      "out_of_scope": 28
+    }
+  },
+  "test_collections": {
+    "baseline_classification": 80,
+    "additional_out_of_scope": 20,
+    "prompt_injection_adversarial_safety": 10,
+    "total": 110
+  },
+  "held_out_usage": "Do not use test examples for vocabulary construction, feature selection, model fitting, threshold selection or tuning. Use validation examples for threshold selection.",
+  "evidence_snapshot": {
+    "day2_freeze_directory": "data/frozen_day2_2026-11-11/",
+    "day2_freeze_manifest_sha256": "6e44f72d565f694cec47eb05fbec2d1726de88fba2aa49d011a708058a30a506",
+    "active_retrieval_dataset_sha256": "be6e2104182827fb5065dadab82295007886695964a920183a895db467c7a193",
+    "source_register_sha256": "e4206b98835fb8f28ef272023554cd27f33068c86b12d5ccb9588b3d94e77d54"
+  },
+  "file_sha256": {
+    "training_examples.json": "e753ffdeea81d81665dc8423ca8dbe1ff206c7f68b0808840567c7b468fd372c",
+    "validation_examples.json": "50b3b4cb1f05f8e03d1043a9b2a90fd9b15f6c331c98d609495a813b7b21caa6",
+    "test_examples.json": "b26ef4d157936a00063e07d419f4f32f581c4219f892410296c8f535c24804aa"
+  },
+  "safety_routing": {
+    "scam_fraud_warning": "REFER_HUMAN; no knowledge retrieval",
+    "human_help_request": "REFER_HUMAN",
+    "out_of_scope": "DECLINE_OUT_OF_SCOPE",
+    "prompt_injection": "BLOCK_INJECTION before classifier and retrieval; intent is null",
+    "missing_in_scope_evidence": "preserve domain intent; ABSTAIN_NOT_IN_SOURCES"
+  },
+  "model_status": {
+    "trained": false,
+    "evaluated": false
+  },
+  "notes": [
+    "Examples contain questions and expected actions, not generated factual answers.",
+    "Only active approved retrieval passage references are permitted.",
+    "The held-out injection cases are a separate safety collection inside test_examples.json.",
+    "No backend behavior is implemented or asserted by this dataset metadata."
+  ]
+}

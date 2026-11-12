@@ -1,0 +1,32 @@
+[
+  {
+    "id": "KB027",
+    "topic": "payments_mobile_money",
+    "text": "The 2023 National Payment Systems Directives on Electronic Money Issuance state that an e-money institution must resolve a failed local transaction within 48 hours.",
+    "source_id": "SRC011",
+    "source_title": "National Payment Systems Directives on Electronic Money Issuance, 2023",
+    "source_url": "https://www.boz.zm/Directive202307ElectronicMoneyIssuance2023.pdf",
+    "publication_date": "2023-07",
+    "accessed_date": "2026-11-11",
+    "section_or_page": "Directive 32(2)(f), Gazette printed p.616",
+    "status": "NEEDS_REVIEW",
+    "retrieval_enabled": false,
+    "review_note": "The official directive explicitly supports the 48-hour requirement, but its current legal status is unconfirmed. Confirm it remains in force and is suitable consumer guidance before approval.",
+    "original_text": "NEW CANDIDATE — found during the official BoZ source-gap search; no original KB passage."
+  },
+  {
+    "id": "KB028",
+    "topic": "complaints_process",
+    "text": "The 2023 National Payment Systems Directives on Electronic Money Issuance require e-money institutions to give customers plain-language complaint information, including how to lodge a complaint, maximum resolution time limits, and appeal options.",
+    "source_id": "SRC011",
+    "source_title": "National Payment Systems Directives on Electronic Money Issuance, 2023",
+    "source_url": "https://www.boz.zm/Directive202307ElectronicMoneyIssuance2023.pdf",
+    "publication_date": "2023-07",
+    "accessed_date": "2026-11-11",
+    "section_or_page": "Directive 32(2)(a)–(c), Gazette printed pp.615–616",
+    "status": "NEEDS_REVIEW",
+    "retrieval_enabled": false,
+    "review_note": "The official directive explicitly supports the complaint-information duty, but its current legal status is unconfirmed. Confirm it remains in force and is suitable consumer guidance before approval.",
+    "original_text": "NEW CANDIDATE — found during the official BoZ source-gap search; no original KB passage."
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "KB010",
+    "topic": "consumer_rights",
+    "text": "The National Financial Inclusion Strategy 2017–2022 set a historical target to enhance consumer protection and increase consumers’ financial capabilities. This is a past strategy target, not a statement of current policy.",
+    "source_id": "SRC009",
+    "source_title": "National Financial Inclusion Strategy 2017–2022",
+    "source_url": "https://www.boz.zm/sites/default/files/2026-02/National-Financial-Inclusion-Strategy-2017-2022.pdf",
+    "publication_date": "2017",
+    "accessed_date": "2026-11-11",
+    "section_or_page": "Executive Summary, printed pp. xi–xii; strategy targets for 2022",
+    "status": "EXCLUDED",
+    "retrieval_enabled": false,
+    "review_note": "INDEPENDENT_RESEARCHER_SCOPE_DECISION (not supervisor approval): exclude from the active consumer knowledge base because SRC009 is a Ministry of Finance-authored 2017–2022 strategy, while the project requires BoZ-published sources. Preserve this historical record and its audit trail; do not present it as current BoZ policy.",
+    "original_text": "Under the National Financial Inclusion Strategy, the Bank of Zambia prioritizes strengthening consumer protection frameworks and increasing financial capabilities to protect consumers against emerging market risks."
+  },
+  {
+    "id": "KB020",
+    "topic": "regulations_directives",
+    "text": "The Bank of Zambia requirements document sets out application steps and supporting documents for prospective entities seeking designation to operate a payment system.",
+    "source_id": "SRC006",
+    "source_title": "Requirements for Designating a Payment System",
+    "source_url": "https://www.boz.zm/sites/default/files/2026-04/Requirements%20for%20Designation%20of%20Payment%20System.pdf",
+    "publication_date": "2025-02",
+    "accessed_date": "2026-11-11",
+    "section_or_page": "Requirements document, printed pp.4–6, sections 1.1–1.4",
+    "status": "EXCLUDED",
+    "retrieval_enabled": false,
+    "review_note": "INDEPENDENT_RESEARCHER_SCOPE_DECISION (not supervisor approval): exclude from ordinary consumer retrieval because SRC006 addresses prospective payment-system applicants/operators. Preserve this source-backed operator information and its audit trail; do not delete it or serve it as consumer guidance.",
+    "original_text": "Applicants intending to conduct payment system business must submit formal applications to the Bank of Zambia detailing their business structure, policies, and risk management frameworks."
+  },
+  {
+    "id": "KB021",
+    "topic": "regulations_directives",
+    "text": "The document requires payment-system applicants to submit a risk-management framework and anti-money-laundering/counter-terrorism-financing policies; it also requires KYC and client-verification procedures addressing money-laundering and terrorism or proliferation-financing risks.",
+    "source_id": "SRC006",
+    "source_title": "Requirements for Designating a Payment System",
+    "source_url": "https://www.boz.zm/sites/default/files/2026-04/Requirements%20for%20Designation%20of%20Payment%20System.pdf",
+    "publication_date": "2025-02",
+    "accessed_date": "2026-11-11",
+    "section_or_page": "Requirements document, printed pp.9–10, sections 1.7 and 1.9",
+    "status": "EXCLUDED",
+    "retrieval_enabled": false,
+    "review_note": "INDEPENDENT_RESEARCHER_SCOPE_DECISION (not supervisor approval): exclude from ordinary consumer retrieval because SRC006 addresses prospective payment-system applicants/operators. Preserve this source-backed operator information and its audit trail; do not delete it or serve it as consumer guidance.",
+    "original_text": "Payment system applicants must satisfy the Bank of Zambia that they maintain robust Anti-Money Laundering (AML/CFT) and Know Your Customer (KYC) procedures to prevent financial crimes."
+  },
+  {
+    "id": "KB022",
+    "topic": "regulations_directives",
+    "text": "The Bank of Zambia states that it shall determine a payment-system designation application within 90 days after receiving a duly completed application. The document says an application is complete only after the Bank gives written notice.",
+    "source_id": "SRC006",
+    "source_title": "Requirements for Designating a Payment System",
+    "source_url": "https://www.boz.zm/sites/default/files/2026-04/Requirements%20for%20Designation%20of%20Payment%20System.pdf",
+    "publication_date": "2025-02",
+    "accessed_date": "2026-11-11",
+    "section_or_page": "Requirements document, printed p.12, section 4.1.1",
+    "status": "EXCLUDED",
+    "retrieval_enabled": false,
+    "review_note": "INDEPENDENT_RESEARCHER_SCOPE_DECISION (not supervisor approval): exclude from ordinary consumer retrieval because SRC006 addresses prospective payment-system applicants/operators. Preserve this source-backed operator information and its audit trail; do not delete it or serve it as consumer guidance.",
+    "original_text": "The Bank of Zambia determines an application for designation of a payment system within a period of ninety days from the date of receipt of a duly completed application."
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "KB010",
+    "topic": "consumer_rights",
+    "text": "Under the National Financial Inclusion Strategy, the Bank of Zambia prioritizes strengthening consumer protection frameworks and increasing financial capabilities to protect consumers against emerging market risks.",
+    "source_id": "SRC009",
+    "source_title": "National Financial Inclusion Strategy (NFIS)",
+    "source_url": "https://www.boz.zm/sites/default/files/2026-02/National-Financial-Inclusion-Strategy-2017-2022.pdf",
+    "publication_date": null,
+    "accessed_date": "2026-11-10",
+    "section_or_page": "Pages xi-xiv",
+    "status": "review_required",
+    "retrieval_enabled": false,
+    "review_note": "Historical 2017–2022 strategy; publisher and project-scope eligibility need supervisor confirmation. Do not present as current policy."
+  },
+  {
+    "id": "KB018",
+    "topic": "financial_education",
+    "text": "The Bank of Zambia released an official educational mobile application alongside the K100 and K50 banknotes to help members of the public easily identify currency security features.",
+    "source_id": "SRC005",
+    "source_title": "Public Notice: Launch of the K100 and K50 Banknotes and Release of an Educational App on the New Currency",
+    "source_url": "https://www.boz.zm/sites/default/files/2026-01/Public_Notice_Currency_App.pdf",
+    "publication_date": "2025-08-13",
+    "accessed_date": "2026-11-10",
+    "section_or_page": "Pages 1-2",
+    "status": "review_required",
+    "retrieval_enabled": false,
+    "review_note": "Quarantined pending manual visual verification of the original public-notice PDF; do not index or serve until text, date and page reference are checked."
+  },
+  {
+    "id": "KB020",
+    "topic": "regulations_directives",
+    "text": "Applicants intending to conduct payment system business must submit formal applications to the Bank of Zambia detailing their business structure, policies, and risk management frameworks.",
+    "source_id": "SRC006",
+    "source_title": "Requirements for Designating a Payment System",
+    "source_url": "https://www.boz.zm/sites/default/files/2026-04/Requirements%20for%20Designation%20of%20Payment%20System.pdf",
+    "publication_date": null,
+    "accessed_date": "2026-11-10",
+    "section_or_page": "Sections 1.2 - 1.4",
+    "status": "restricted_audience",
+    "retrieval_enabled": false,
+    "review_note": "Applicant/operator requirements, not ordinary consumer guidance. Excluded from consumer-facing retrieval unless scope is explicitly expanded."
+  },
+  {
+    "id": "KB021",
+    "topic": "regulations_directives",
+    "text": "Payment system applicants must satisfy the Bank of Zambia that they maintain robust Anti-Money Laundering (AML/CFT) and Know Your Customer (KYC) procedures to prevent financial crimes.",
+    "source_id": "SRC006",
+    "source_title": "Requirements for Designating a Payment System",
+    "source_url": "https://www.boz.zm/sites/default/files/2026-04/Requirements%20for%20Designation%20of%20Payment%20System.pdf",
+    "publication_date": null,
+    "accessed_date": "2026-11-10",
+    "section_or_page": "Section 1.9",
+    "status": "restricted_audience",
+    "retrieval_enabled": false,
+    "review_note": "Applicant/operator requirements, not ordinary consumer guidance. Excluded from consumer-facing retrieval unless scope is explicitly expanded."
+  },
+  {
+    "id": "KB022",
+    "topic": "regulations_directives",
+    "text": "The Bank of Zambia determines an application for designation of a payment system within a period of ninety days from the date of receipt of a duly completed application.",
+    "source_id": "SRC006",
+    "source_title": "Requirements for Designating a Payment System",
+    "source_url": "https://www.boz.zm/sites/default/files/2026-04/Requirements%20for%20Designation%20of%20Payment%20System.pdf",
+    "publication_date": null,
+    "accessed_date": "2026-11-10",
+    "section_or_page": "Section 4.1",
+    "status": "restricted_audience",
+    "retrieval_enabled": false,
+    "review_note": "Applicant/operator requirements, not ordinary consumer guidance. Excluded from consumer-facing retrieval unless scope is explicitly expanded."
+  }
+]
