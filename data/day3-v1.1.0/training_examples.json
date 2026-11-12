@@ -1,0 +1,3162 @@
+[
+  {
+    "example_id": "TRN-CP-007",
+    "question": "Where can I find contact details for a provider's head-office complaints unit?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_head_office_contact; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the article give an address or contact route for the provider's head-office complaints unit?"
+  },
+  {
+    "example_id": "TRN-FE-009",
+    "question": "What theme was used for the 2026 Financial Literacy Week?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_week_theme; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-RD-002",
+    "question": "Has the 2023 electronic money directive been amended since it was issued?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_amendment_status; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-017",
+    "question": "Does the general enquiry page promise a response within a fixed period?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_response_period; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-FE-022",
+    "question": "Is the banknotes app currently supported on all mobile phones?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_app_compatibility; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-HH-012",
+    "question": "Could customer support discuss my question about a payment service with me?",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_payment_question; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-HH-010",
+    "question": "Please let me continue with a live adviser instead of automated messages.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_live_adviser; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-SF-002",
+    "question": "Someone called unexpectedly and asked for a one-time code. Is this a scam?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_code_call; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-LI-005",
+    "question": "Where can a consumer check the licence category shown for a financial institution?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB016"
+    ],
+    "source_ids": [
+      "SRC007"
+    ],
+    "annotation_note": "family=li_tr_directory_category; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-LI-017",
+    "question": "Which agency regulates all insurance companies and pension funds?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_other_regulators; approved scope relabel under rule 4: Asks about insurance and pension regulators rather than Bank of Zambia consumer information."
+  },
+  {
+    "example_id": "TRN-HH-005",
+    "question": "I have a follow-up about this information and want to speak to a real person.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_followup_information; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-HH-017",
+    "question": "I would like a support worker to go over this financial education material.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_education_material; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-SF-001",
+    "question": "A message claiming to be from a bank asks me to share a PIN; can you check whether it is genuine?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_pin_message; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-HH-025",
+    "question": "I am requesting human support for my question, not another bot reply.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_human_support_request; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-FE-024",
+    "question": "Can you recommend a savings product based on my age and income?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_personal_product_advice; approved scope relabel under rule 3: Requests a personalized savings-product recommendation based on the user age and income."
+  },
+  {
+    "example_id": "TRN-CP-013",
+    "question": "Can a customer file a complaint using an authorised representative?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_representative; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-009",
+    "question": "Is there a complete list of rights for financial service consumers?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_complete_list; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the active source set provide a complete list of consumer rights?"
+  },
+  {
+    "example_id": "TRN-OS-019",
+    "question": "Explain the rules of netball to a beginner.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_netball; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-CP-012",
+    "question": "What evidence must I provide before the Bank of Zambia reviews my case?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_boz_evidence; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the article state what evidence BoZ needs before it reviews a case?"
+  },
+  {
+    "example_id": "TRN-OS-014",
+    "question": "Can you explain how rain forms?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_rain_cycle; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-SF-014",
+    "question": "Someone is asking me to install a remote-access app to fix a banking problem. Should I proceed?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_remote_app; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-RD-016",
+    "question": "What is the latest Bank of Zambia notice about payment systems?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_latest_notice; in-scope request has no supporting active passage.",
+    "rewritten_from": "Can the assistant identify the latest payment-system notice from the approved passages?"
+  },
+  {
+    "example_id": "TRN-CR-012",
+    "question": "Which regulator enforces each consumer protection right for every financial product?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_enforcement_map; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-012",
+    "question": "Is there a separate contact person for payment-system oversight questions?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_oversight_contact; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-013",
+    "question": "What does the law require before a bank closes a customer's account?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_closure_notice; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-019",
+    "question": "A suspicious email says the regulator needs my bank details. Can you verify that request?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_email_impersonation; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-LI-001",
+    "question": "What does BoZ say about its role in supervising commercial banks?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB015"
+    ],
+    "source_ids": [
+      "SRC010"
+    ],
+    "annotation_note": "family=li_tr_bank_supervision; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-SF-020",
+    "question": "I may have responded to a fraudulent financial message; can you handle the case?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_possible_loss; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-LI-003",
+    "question": "What minimum capital must a licensed commercial bank maintain?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_minimum_capital; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-013",
+    "question": "Can you confirm whether a specific unnamed lender has a valid licence?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_specific_firm; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-RD-020",
+    "question": "What regulatory procedure should an operator follow to designate a payment system?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_designation_steps; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-PM-022",
+    "question": "Are wallet balances protected if an electronic money issuer becomes insolvent?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_insolvency; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-PM-008",
+    "question": "How can a user ask a provider to reverse a completed wallet payment?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_reversal_steps; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CP-018",
+    "question": "Is there an approved online form for submitting an escalated case to BoZ?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_form_route; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-FE-023",
+    "question": "What lessons about mobile lending were shared during Financial Literacy Week?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_mobile_lending_lesson; in-scope request has no supporting active passage.",
+    "rewritten_from": "What lessons about mobile lending does the literacy-week article provide?"
+  },
+  {
+    "example_id": "TRN-CR-022",
+    "question": "What remedy is provided for a misleading advertisement about a financial product?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_advertisement_remedy; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-OS-010",
+    "question": "Suggest a study timetable for my mathematics exam.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_math_timetable; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-FE-008",
+    "question": "Which organizations are reported as launching 2026 Financial Literacy Week?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB017"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=fe_tr_week_partners; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-CP-001",
+    "question": "Where does the published complaint pathway say a customer should begin after unfair treatment?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB001"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=cp_tr_first_step; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-FE-012",
+    "question": "What is the name of the currency education app mentioned in the public notice?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB018"
+    ],
+    "source_ids": [
+      "SRC005"
+    ],
+    "annotation_note": "family=fe_tr_banknotes_app_name; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-RD-001",
+    "question": "Which current BoZ rule determines how much an e-money institution must hold in capital?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_capital; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-FE-004",
+    "question": "Does the survey publish separate mobile-money figures for each province?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_provincial_mobile_data; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-HH-008",
+    "question": "I am not getting the clarification I need from the bot; connect me to staff.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_clarification_staff; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-PM-013",
+    "question": "Which provider offers the lowest charge for sending money today?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_provider_comparison; approved scope relabel under rule 3: Asks the assistant to compare current provider transfer charges and select the lowest; this is explicitly listed as an out-of-scope example."
+  },
+  {
+    "example_id": "TRN-CO-021",
+    "question": "Does the regional-office listing give directions from the Ndola bus station?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_ndola_directions; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-002",
+    "question": "What postal box is listed for the regulator's Head Office in Lusaka?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB023"
+    ],
+    "source_ids": [
+      "SRC001"
+    ],
+    "annotation_note": "family=co_tr_head_post; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-HH-002",
+    "question": "I would rather discuss this question with a human than keep using the chatbot.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_chatbot_preference; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-PM-002",
+    "question": "Which kinds of transactions are suitable for RTGS?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB013"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=pm_tr_rtgs_use; active approved passage supports the requested fact.",
+    "rewritten_from": "What sort of payments does the article associate with RTGS?"
+  },
+  {
+    "example_id": "TRN-PM-010",
+    "question": "Can a wallet payment be recalled after it reaches an unintended recipient?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_wrong_recipient; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-PM-012",
+    "question": "Are mobile-wallet transfers cleared through DDACC batches?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_wallet_batch_comparison; in-scope request has no supporting active passage.",
+    "rewritten_from": "Do the sources explain whether wallet transfers use DDACC batch clearing?"
+  },
+  {
+    "example_id": "TRN-CP-010",
+    "question": "Is a provider bound by the Bank of Zambia's decision after a complaint review?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_review_binding; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the article say whether BoZ's review decision is binding on a provider?"
+  },
+  {
+    "example_id": "TRN-HH-016",
+    "question": "Could I get human assistance using the financial-institution directory?",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_directory_assistance; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-CP-016",
+    "question": "How many working days does a provider have to decide a complaint?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_resolution_deadline; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-HH-001",
+    "question": "Please have a person explain the complaint pathway mentioned in the answer.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_complaint_explanation; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-FE-007",
+    "question": "Which survey results compare the use of formal and informal services?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB019"
+    ],
+    "source_ids": [
+      "SRC008"
+    ],
+    "annotation_note": "family=fe_tr_inclusion_factors; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-HH-024",
+    "question": "Would someone from customer support follow up with me about this query?",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_support_followup; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-RD-023",
+    "question": "What consumer protection directive replaced the prior version in 2023?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_replacement_status; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-FE-010",
+    "question": "How long should financial education sessions last?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_learning_hours; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the article recommend a particular number of hours for financial education?"
+  },
+  {
+    "example_id": "TRN-CR-025",
+    "question": "What time limit applies to bringing a consumer-rights case before a court?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_court_time; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-HH-011",
+    "question": "I need a staff member to help me find the information on the BoZ site.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_site_navigation; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-HH-003",
+    "question": "Could someone from support clarify the source quoted in your reply?",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_source_clarification; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-FE-021",
+    "question": "How many people downloaded the banknote learning application?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_app_downloads; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-FE-019",
+    "question": "Where can I find the next public financial education workshop?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_next_workshop; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-OS-009",
+    "question": "My laptop battery drains quickly; what settings should I check?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_laptop; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-PM-009",
+    "question": "What service deadline applies after an electronic money transfer fails?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_failed_transfer_time; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-FE-016",
+    "question": "Can the assistant give me a household budget that fits a Lusaka salary?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_budget_advice; approved scope relabel under rule 3: Requests a household budget tailored to the salary specified by the user, so this is personalized advice based on their own income."
+  },
+  {
+    "example_id": "TRN-PM-005",
+    "question": "What consumer-information purpose does the payment-systems page attribute to payment rules?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB029"
+    ],
+    "source_ids": [
+      "SRC014"
+    ],
+    "annotation_note": "family=pm_tr_consumer_information; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-FE-014",
+    "question": "Does the public notice name the app developer or give a download link?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_app_developer; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CP-003",
+    "question": "Must a financial provider explain why it rejected my transaction complaint?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_rejection_reason; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the article say whether a provider must explain why it rejected a transaction complaint?"
+  },
+  {
+    "example_id": "TRN-PM-017",
+    "question": "What complaint deadline applies after an e-money transaction fails locally?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_failed_deadline; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-023",
+    "question": "Can I submit a payment dispute through the regulator's enquiry form?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_dispute_formality; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-015",
+    "question": "A notice on a messaging group promises guaranteed returns if I send money. Is it trustworthy?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_returns_claim; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-LI-012",
+    "question": "What is the full current list of approved mobile-money providers?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_wallet_operator_list; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-019",
+    "question": "What proof should I request before opening an account with a new lender?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_proof_request; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-PM-020",
+    "question": "Can I use my Zambian mobile-money wallet while travelling outside Zambia?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_cross_border; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the source explain how to send money from a Zambian wallet while travelling abroad?"
+  },
+  {
+    "example_id": "TRN-RD-003",
+    "question": "What current directive sets the customer complaint process for wallet providers?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_complaint_rule; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-FE-013",
+    "question": "What educational purpose does the notice give for the Zambian Banknotes app?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB018"
+    ],
+    "source_ids": [
+      "SRC005"
+    ],
+    "annotation_note": "family=fe_tr_banknotes_app_purpose; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-OS-008",
+    "question": "Can you translate a paragraph from English into Nyanja?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_nyanja_translation; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-LI-008",
+    "question": "Does the public register show who owns shares in each listed institution?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_ownership_details; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CP-004",
+    "question": "Does the complaint process apply when my provider is not a bank?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_nonbank_scope; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the cited pathway say whether it covers complaints about a non-bank provider?"
+  },
+  {
+    "example_id": "TRN-FE-017",
+    "question": "What savings rate does BoZ recommend for young workers?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_savings_rate; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-020",
+    "question": "Can the assistant tell me whether a regulator office is open today?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_open_today; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-003",
+    "question": "Which consumer-protection priorities are named in the BoZ strategic plan summary?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB025"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=cr_tr_plan_priorities; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-HH-009",
+    "question": "Would a person be able to talk me through the passage you found?",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_passage_walkthrough; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-PM-025",
+    "question": "What protection applies if a wallet account is closed while a payment dispute is still open?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_closed_account_dispute; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-HH-022",
+    "question": "Please connect me with a human to clarify what the cited material says.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_cited_material; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-LI-011",
+    "question": "Does appearing in the register guarantee that a financial firm is safe?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_safety_guarantee; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-OS-012",
+    "question": "Tell me a bedtime story about a baobab tree.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_baobab_story; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-RD-004",
+    "question": "Which regulation applies to licensing a payment system operator today?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_operator_licensing; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-017",
+    "question": "A person claiming to be an agent wants me to read out a confidential code. Can you advise?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_agent_code; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-RD-008",
+    "question": "What consumer regulation applies when an electronic payment fails?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_failed_payment; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-006",
+    "question": "Which address does BoZ give for its regional office?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB024"
+    ],
+    "source_ids": [
+      "SRC001"
+    ],
+    "annotation_note": "family=co_tr_regional_address; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-RD-019",
+    "question": "Are any payment-system provisions no longer in force?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_withdrawn; in-scope request has no supporting active passage.",
+    "rewritten_from": "Do the approved passages show whether any provisions were withdrawn?"
+  },
+  {
+    "example_id": "TRN-CR-018",
+    "question": "Who is eligible to open a basic savings account?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_savings_account_eligibility; in-scope request has no supporting active passage.",
+    "rewritten_from": "Do the sources state who qualifies to open a basic savings account?"
+  },
+  {
+    "example_id": "TRN-PM-019",
+    "question": "What setup steps should a shop follow before accepting mobile payments?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_merchant_setup; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-FE-005",
+    "question": "What overall inclusion figures are compared in the FinScope overview?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB019"
+    ],
+    "source_ids": [
+      "SRC008"
+    ],
+    "annotation_note": "family=fe_tr_overall_inclusion; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-PM-024",
+    "question": "What network-availability guarantee applies to a wallet service?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_uptime; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-015",
+    "question": "Which way of contacting the Bank of Zambia gets the fastest response?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_response_speed; in-scope request has no supporting active passage.",
+    "rewritten_from": "Can the source confirm which contact channel responds fastest?"
+  },
+  {
+    "example_id": "TRN-CO-014",
+    "question": "Is there a telephone extension for visitors who need accessibility help at the Bank of Zambia?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_accessibility_extension; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the source publish a telephone extension for visitors who need accessibility assistance?"
+  },
+  {
+    "example_id": "TRN-OS-025",
+    "question": "How do I care for indoor plants during the dry season?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_indoor_plants; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-HH-018",
+    "question": "Please put me through to an employee who can discuss my enquiry.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_employee_discussion; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-PM-001",
+    "question": "How does the March 2026 issue say routine EFTs are processed?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB012"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=pm_tr_eft_batches; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-RD-006",
+    "question": "What notice officially revoked the earlier electronic money issuance rules?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_revocation_notice; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-HH-004",
+    "question": "The text is hard for me to read; can a staff member help me with it?",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_reading_access; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-CR-006",
+    "question": "What exact disclosure must a provider give before changing account terms?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_disclosure_rule; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-HH-015",
+    "question": "Please arrange for someone from the team to explain the answer to me.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_answer_explanation; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-SF-010",
+    "question": "A text warns that my wallet will be closed unless I respond with confidential details. What now?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_wallet_threat; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-OS-005",
+    "question": "Explain the difference between a noun and a verb.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_grammar; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-CO-003",
+    "question": "Which general email does the Contact Us page publish?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB023"
+    ],
+    "source_ids": [
+      "SRC001"
+    ],
+    "annotation_note": "family=co_tr_general_email; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-PM-021",
+    "question": "What proof of payment should a customer keep after a wallet transaction?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_receipt; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-HH-023",
+    "question": "I need a person to help me use this consumer-information service.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_service_help; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-OS-017",
+    "question": "What should I pack for a trip to the Luangwa Valley?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_luangwa_packing; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-FE-011",
+    "question": "How many public activities took place during the week?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_activity_count; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-024",
+    "question": "Which regulator should I check for a cooperative savings group?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_cooperative; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-RD-015",
+    "question": "What official directive regulates electronic money customer disclosures?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_customer_disclosures; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-008",
+    "question": "What legal remedy applies when a provider rejects a consumer's claim?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_claim_remedy; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-PM-007",
+    "question": "What current charges apply when sending money through a wallet?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_fee_schedule; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-010",
+    "question": "What kinds of general contact channels are listed by BoZ?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB004"
+    ],
+    "source_ids": [
+      "SRC001"
+    ],
+    "annotation_note": "family=co_tr_contact_channels; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-CO-008",
+    "question": "Does the contact page describe how to attach documents to an enquiry?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_attachment_instructions; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-008",
+    "question": "I am unsure whether a payment request I received is fraudulent; can you investigate it?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_payment_request; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-CR-017",
+    "question": "What right applies if a financial firm uses a customer's personal information improperly?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_privacy_right; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CP-022",
+    "question": "What appeal deadline applies if a provider's final response is unsatisfactory?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_appeal_deadline; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-010",
+    "question": "What rule sets the maximum interest a lender may charge in Zambia?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_interest_cap; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CP-024",
+    "question": "Can a customer skip the provider and ask BoZ to open a case immediately?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_skip_provider; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-HH-007",
+    "question": "Can a human help me understand what this financial information means?",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_financial_explanation; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-RD-010",
+    "question": "Has BoZ superseded the 2023 directives with a newer e-money instrument?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_superseded; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-FE-020",
+    "question": "Does the survey provide financial inclusion results for every district?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_district_data; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-003",
+    "question": "I received a suspicious link about a BoZ warning. Can you tell me what to do?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_regulator_link; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-CR-021",
+    "question": "Is there a statutory cooling-off period for every financial agreement?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_cooling_off; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-006",
+    "question": "What should I do about a message that asks for my mobile-money secret code?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_mobile_code; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-CP-006",
+    "question": "Will I receive a new reference number if my complaint is escalated to head office?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_escalation_reference; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the article say whether a head-office escalation receives a new reference number?"
+  },
+  {
+    "example_id": "TRN-PM-015",
+    "question": "How can I confirm whether a wallet payment reached the intended recipient?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_delivery_confirmation; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CP-025",
+    "question": "What exact service standard applies to a complaint about an electronic payment?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_electronic_standard; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-HH-020",
+    "question": "I prefer to speak with someone directly about this regulator information.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_regulator_information; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-CP-015",
+    "question": "Which complaint details should a customer keep for their own records?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_recordkeeping; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-010",
+    "question": "Which banks are currently licensed in each province?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_banks_by_province; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-RD-012",
+    "question": "What are the present legal obligations for a mobile-money issuer?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_issuer_obligations; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-023",
+    "question": "Does a consumer have a right to compensation when a digital service is interrupted?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_interruption_compensation; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-016",
+    "question": "Does the plan guarantee that every consumer dispute will be resolved?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_outcome_guarantee; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-RD-018",
+    "question": "Which BoZ publication explains the legal status of the 2023 directives?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_status_publication; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-OS-015",
+    "question": "What music festivals are happening in Zambia this month?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_music_events; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-PM-004",
+    "question": "Does BoZ's oversight page include mobile-money payments among the systems it oversees?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB029"
+    ],
+    "source_ids": [
+      "SRC014"
+    ],
+    "annotation_note": "family=pm_tr_mobile_oversight; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-FE-006",
+    "question": "Does FinScope provide separate financial-inclusion figures by gender?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_gender_data; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-021",
+    "question": "An unfamiliar caller wants me to approve a wallet action while we are speaking. Is that legitimate?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_wallet_action; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-HH-013",
+    "question": "I want to ask a person about the consumer-rights information.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_rights_question; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-OS-020",
+    "question": "How can I remove a coffee stain from a shirt?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_stain; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-CR-004",
+    "question": "Which law guarantees compensation if a bank makes a mistake?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_compensation_law; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CP-002",
+    "question": "Must a complaint be written on paper before a provider considers it?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_written_form; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-RD-021",
+    "question": "Can you list the current circulars about wallet charges?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_wallet_circulars; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-OS-007",
+    "question": "Which tourist attractions are near Livingstone?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_livingstone_tourism; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-OS-016",
+    "question": "Help me troubleshoot an app that will not open on my phone.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_phone_app; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-RD-009",
+    "question": "Where can I read the latest amendments to payment-system rules?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_latest_amendments; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-014",
+    "question": "Is a provider required to explain product charges in a standard format?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_fee_format; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CP-005",
+    "question": "Where can I take a complaint if the provider's branch has not resolved it?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB002"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=cp_tr_head_office; active approved passage supports the requested fact.",
+    "rewritten_from": "After a branch-level complaint goes nowhere, what escalation does the article describe?"
+  },
+  {
+    "example_id": "TRN-CR-007",
+    "question": "Can a customer always cancel a financial contract without a charge?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_cancellation_right; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-OS-011",
+    "question": "What are some ways to keep chickens in a backyard?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_poultry; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-CO-007",
+    "question": "What regional telephone contact appears on the BoZ page?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB024"
+    ],
+    "source_ids": [
+      "SRC001"
+    ],
+    "annotation_note": "family=co_tr_regional_phone; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-FE-003",
+    "question": "How many respondents took part in the FinScope survey?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_sample_size; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-OS-021",
+    "question": "Give me ideas for a community clean-up activity.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_community_activity; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-LI-015",
+    "question": "What licence does a microfinance institution need to open a branch?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_microfinance_rules; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-025",
+    "question": "I suspect a financial scam but do not know who sent the message. Can you help investigate?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_unknown_sender; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-FE-002",
+    "question": "Does FinScope give the total number of active mobile-money accounts used by adults?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_account_count; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-005",
+    "question": "Are there statutory limits on every fee charged by a financial provider?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_fee_limits; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-FE-015",
+    "question": "Which mobile operating systems support the banknote education app?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_app_platforms; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-PM-011",
+    "question": "What is the current process for disputing an electronic money deduction?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_e_money_dispute; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CP-017",
+    "question": "Where can I find the current deadline for a mobile-money complaint to be resolved?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_mobile_timeline; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-RD-014",
+    "question": "Which rules govern a financial institution's handling of consumer complaints?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_consumer_complaints; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-PM-023",
+    "question": "Can a customer schedule a recurring payment from a mobile wallet?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_recurring; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-002",
+    "question": "Which law covers commercial-bank licensing in Zambia?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB015"
+    ],
+    "source_ids": [
+      "SRC010"
+    ],
+    "annotation_note": "family=li_tr_bank_licensing; active approved passage supports the requested fact.",
+    "rewritten_from": "Under which Act does the source say commercial banks are licensed?"
+  },
+  {
+    "example_id": "TRN-CP-008",
+    "question": "What details must an escalation to a provider's head office contain?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_escalation_details; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-022",
+    "question": "Can the listed offices confirm receipt of a general enquiry?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_receipt_confirmation; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-007",
+    "question": "A person says they work for a regulator and wants private banking details. Can you verify them?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_impersonation; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-SF-013",
+    "question": "Can you assess a suspicious message about a supposed account security check?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_security_message; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-LI-004",
+    "question": "Are foreign-bank branches licensed under the same rule as locally incorporated banks?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_foreign_branch_rule; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-016",
+    "question": "When does each financial institution's licence expire?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_expiry_dates; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the source provide the date when each institution's licence expires?"
+  },
+  {
+    "example_id": "TRN-OS-022",
+    "question": "Can you review the grammar in my school paragraph?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_grammar_review; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-RD-005",
+    "question": "Can you confirm whether the 2023 e-money issuance directives are still in force?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_current_force; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-011",
+    "question": "I think someone may be impersonating a financial institution in a phone call; can you confirm?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_phone_impersonation; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-CP-009",
+    "question": "When are consumers directed to approach BoZ in the three-step complaint sequence?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB003"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=cp_tr_boz_stage; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-OS-003",
+    "question": "How do I grow tomatoes in a small garden?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_gardening; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-RD-022",
+    "question": "Which rule defines when a transaction counts as failed under e-money regulations?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_failed_definition; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-006",
+    "question": "What information does the live registered-institutions directory list?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB016"
+    ],
+    "source_ids": [
+      "SRC007"
+    ],
+    "annotation_note": "family=li_tr_directory_fields; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-CO-004",
+    "question": "Is there a dedicated call centre for general consumer questions?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_call_centre; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-024",
+    "question": "Can you check whether an unexpected message asking for private banking information is genuine?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_private_info; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-FE-001",
+    "question": "How did adult mobile-money uptake compare between the 2020 and 2025 FinScope results?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB014"
+    ],
+    "source_ids": [
+      "SRC008"
+    ],
+    "annotation_note": "family=fe_tr_mobile_uptake; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-HH-014",
+    "question": "Can a human review my question before I rely on the information?",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_human_review; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-SF-023",
+    "question": "Someone says they can reverse a transfer if I provide a code. Could this be fraud?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_reversal_scam; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-PM-016",
+    "question": "Can a customer transfer money from a wallet to a bank account using these instructions?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_wallet_bank_transfer; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-007",
+    "question": "Can a consumer download a copy of an institution's licence from each directory entry?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_download_licence; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-016",
+    "question": "What WhatsApp number should consumers use for BoZ support?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_whatsapp; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-018",
+    "question": "How can I tell whether an urgent payment demand is a scam?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_urgent_demand; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-CR-002",
+    "question": "What qualities should a financial product have to be considered safe?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB009"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=cr_tr_safe_product; active approved passage supports the requested fact.",
+    "rewritten_from": "What three characteristics are listed for a safe financial product in the article?"
+  },
+  {
+    "example_id": "TRN-CO-005",
+    "question": "Does the page state which departments handle different enquiry topics?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_department_routing; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-024",
+    "question": "Is a direct telephone contact listed for the BoZ legal department?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_legal_department; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-011",
+    "question": "Does the site publish a text-message number for public enquiries?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_sms; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-009",
+    "question": "An online seller is asking me to pay through an unfamiliar link. Is it legitimate?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_seller_link; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-CO-001",
+    "question": "Does the public page list a direct email for the consumer-protection department?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_consumer_department; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-025",
+    "question": "Does the regional entry give public transport directions to the office?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_regional_directions; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-009",
+    "question": "Is there an online general enquiry form on the Contact Us page?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB004"
+    ],
+    "source_ids": [
+      "SRC001"
+    ],
+    "annotation_note": "family=co_tr_enquiry_form; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-LI-020",
+    "question": "Are all companies with the word bank in their name regulated by BoZ?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_name_rule; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-025",
+    "question": "What conditions must a bank meet to keep its licence in good standing?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_ongoing_conditions; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-019",
+    "question": "Which regional offices operate outside Lusaka and Ndola?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_other_regions; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-PM-003",
+    "question": "What is the stated lower transaction value mentioned in the RTGS paragraph?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB013"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=pm_tr_rtgs_value; active approved passage supports the requested fact."
+  },
+  {
+    "example_id": "TRN-OS-006",
+    "question": "Help me draft a job application for a teaching role.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_job_application; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-CR-011",
+    "question": "Are consumers entitled to a refund for a disputed mobile-money deduction?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_wallet_refund; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-RD-011",
+    "question": "Which provision sets the time allowed to resolve a failed wallet transfer?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_failed_time; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-009",
+    "question": "Does the Bank of Zambia license every type of lender in the country?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_all_lenders; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the source say BoZ licenses every type of lender in Zambia?"
+  },
+  {
+    "example_id": "TRN-OS-024",
+    "question": "Suggest a route for cycling around Lusaka's parks.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_lusaka_cycling; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-OS-013",
+    "question": "How do I make a simple poster for a school event?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_poster; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-CP-023",
+    "question": "Is there a required format for a written complaint to a financial service provider?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_complaint_format; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the source give a required format for a written complaint to a provider?"
+  },
+  {
+    "example_id": "TRN-OS-018",
+    "question": "Can you suggest a vegetarian lunch for a hot day?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_lunch; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-HH-019",
+    "question": "The assistant cannot settle my question; may a person take it from here?",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_bot_limit; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-RD-024",
+    "question": "Is there a verified current BoZ notice about electronic money complaint timelines?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_timeline_notice; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-021",
+    "question": "Can the assistant guarantee a listed bank will repay every customer?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_repayment_guarantee; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CP-014",
+    "question": "Must a provider confirm in writing that it has received a complaint?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_acknowledgement; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the material explain whether a provider must acknowledge receipt in writing?"
+  },
+  {
+    "example_id": "TRN-CP-021",
+    "question": "How do I check the progress of a complaint after sending it to BoZ?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_case_tracking; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-013",
+    "question": "What are the regulator's current office hours?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_hours; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-OS-004",
+    "question": "What ingredients go into a traditional ifisashi dish?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_ifisashi_recipe; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-RD-013",
+    "question": "What rules currently apply to electronic-money providers?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_current_provider; in-scope request has no supporting active passage.",
+    "rewritten_from": "Does the active knowledge base contain current requirements for an e-money provider?"
+  },
+  {
+    "example_id": "TRN-CP-020",
+    "question": "Can the regulator guarantee that a provider will refund a disputed charge?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_refund_outcome; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-001",
+    "question": "How are providers expected to behave under market-conduct supervision?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB008"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=cr_tr_fair_conduct; active approved passage supports the requested fact.",
+    "rewritten_from": "In the March 2026 article, what does market-conduct supervision expect of providers?"
+  },
+  {
+    "example_id": "TRN-FE-018",
+    "question": "Which financial literacy lessons are taught in Zambian secondary schools?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_school_curriculum; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-020",
+    "question": "Can consumers choose the language used when they receive financial services?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_language_rights; in-scope request has no supporting active passage.",
+    "rewritten_from": "Do approved passages describe consumers' language rights when receiving financial services?"
+  },
+  {
+    "example_id": "TRN-RD-007",
+    "question": "Which legal instrument establishes mobile-money transfer fee limits?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_fee_limits; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-RD-025",
+    "question": "What legal requirement applies to electronic money issuers after an amendment?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_after_amendment; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-005",
+    "question": "A caller is pressuring me to approve an unfamiliar transfer. Is that safe?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_transfer_pressure; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-PM-018",
+    "question": "Can a wallet user withdraw cash without paying an agent charge?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_cashout_fee; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-024",
+    "question": "What rules govern debt-collection practices by financial firms?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_debt_collection; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-HH-021",
+    "question": "Can a staff member help me understand why the assistant abstained?",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_abstention_explanation; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-SF-012",
+    "question": "A stranger says a fee is needed to release a prize from my mobile wallet. Is this genuine?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_prize_fee; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-CR-015",
+    "question": "What protection applies if a digital payment reaches the wrong recipient?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_wrong_recipient; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-023",
+    "question": "Are branches and agents individually listed in the live register?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_branch_agents; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-022",
+    "question": "What current licence category applies to digital credit companies?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_digital_credit; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CP-011",
+    "question": "Will the regulator contact a provider directly after a case is referred for review?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_regulator_followup; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CP-019",
+    "question": "What documents must a consumer attach when taking an unresolved complaint to the regulator?",
+    "split": "train",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cp_tr_required_documents; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CO-018",
+    "question": "Is there a separate email for filing a formal financial complaint?",
+    "split": "train",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=co_tr_formal_email; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-022",
+    "question": "A group chat is circulating a link that promises a cash reward for entering secret details. Is it safe?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_reward_link; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-SF-004",
+    "question": "A social-media account is offering to recover money after a suspected fraud. Should I trust it?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_recovery_offer; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-FE-025",
+    "question": "Does the survey report financial education results by occupation or employment status?",
+    "split": "train",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=fe_tr_occupation_data; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-OS-001",
+    "question": "Can you help me plan a family visit to the Copperbelt?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_copperbelt_trip; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-RD-017",
+    "question": "What date did a current consumer-protection directive take effect?",
+    "split": "train",
+    "intent": "regulations_directives",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=rd_tr_effective_date; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-HH-006",
+    "question": "Please hand my question to a support agent who can respond directly.",
+    "split": "train",
+    "intent": "human_help_request",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=hh_tr_agent_response; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-PM-006",
+    "question": "How do I complete a mobile-money transfer from a basic phone?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_transfer_steps; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-LI-018",
+    "question": "Does the directory show whether a firm has had complaints against it?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_complaint_history; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-SF-016",
+    "question": "I received an unexpected request to move funds to a different wallet for safety. Is it real?",
+    "split": "train",
+    "intent": "scam_fraud_warning",
+    "scenario_type": "sensitive_referral",
+    "expected_action": "REFER_HUMAN",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=sf_tr_safety_transfer; mandatory human referral before any retrieval."
+  },
+  {
+    "example_id": "TRN-PM-014",
+    "question": "What daily transfer limit applies to a mobile wallet in Zambia?",
+    "split": "train",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=pm_tr_wallet_limit; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-CR-019",
+    "question": "What protection applies when a financial service is inaccessible to a customer with a disability?",
+    "split": "train",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=cr_tr_accessibility; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-OS-023",
+    "question": "What is the capital city of Malawi?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_malawi_capital; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-OS-002",
+    "question": "Write a short poem about the Zambezi River.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=os_tr_zambezi_poem; request is outside the fixed project scope."
+  },
+  {
+    "example_id": "TRN-LI-014",
+    "question": "Which institutions are authorised to take deposits today?",
+    "split": "train",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ABSTAIN_NOT_IN_SOURCES",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=li_tr_deposit_list; in-scope request has no supporting active passage."
+  },
+  {
+    "example_id": "TRN-OSB-001",
+    "question": "What balance is currently showing on my bank account?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_balance; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-002",
+    "question": "Can you check how much money I have in my account?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_balance; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-003",
+    "question": "How much do I have left in my bank account today?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_balance; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-004",
+    "question": "Please look up my current account balance.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_balance; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-005",
+    "question": "Could you tell me the amount in my account at the moment?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_balance; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-006",
+    "question": "I need to know what my current bank balance is.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_balance; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-007",
+    "question": "Are you able to see how much is in my account?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_balance; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-008",
+    "question": "What charges does my bank apply when I use its services?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_own_bank_fees; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-009",
+    "question": "Can you list the fees at my bank?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_own_bank_fees; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-010",
+    "question": "How much does my bank charge for keeping an account?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_own_bank_fees; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-011",
+    "question": "Where can I see the charges my bank applies to me?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_own_bank_fees; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-012",
+    "question": "Tell me what I pay in fees to my bank.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_own_bank_fees; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-013",
+    "question": "What are the charges on my bank's services?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_own_bank_fees; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-014",
+    "question": "Make a monthly budget using the salary I earn.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_personal_budget; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-015",
+    "question": "Help me decide how to divide my income between bills and savings.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_personal_budget; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-016",
+    "question": "Can you plan my spending around my take-home pay?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_personal_budget; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-017",
+    "question": "I want a household budget based on what I earn each month.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_personal_budget; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-018",
+    "question": "How should I use my salary to cover my expenses?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_personal_budget; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-019",
+    "question": "Work out a budget that fits my own income and costs.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_personal_budget; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-020",
+    "question": "Which savings account would suit me best?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_personal_product_recommendation; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-021",
+    "question": "Suggest a bank product that fits my circumstances.",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_personal_product_recommendation; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-022",
+    "question": "Could you choose a savings product that matches my needs?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_personal_product_recommendation; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-023",
+    "question": "Is my bank's branch in town open right now?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_branch_hours; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-024",
+    "question": "What time does the nearest branch of my bank close?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_branch_hours; user-specific account service or advice request is outside the assistant's scope."
+  },
+  {
+    "example_id": "TRN-OSB-025",
+    "question": "Can you check the opening hours at my bank's branch?",
+    "split": "train",
+    "intent": "out_of_scope",
+    "scenario_type": "out_of_scope",
+    "expected_action": "DECLINE_OUT_OF_SCOPE",
+    "supporting_passage_ids": [],
+    "source_ids": [],
+    "annotation_note": "family=banking_boundary_branch_hours; user-specific account service or advice request is outside the assistant's scope."
+  }
+]

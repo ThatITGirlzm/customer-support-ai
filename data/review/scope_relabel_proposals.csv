@@ -1,0 +1,5 @@
+"example_id","question","current_intent","proposed_intent","proposed_action","rule_number","reason"
+"TRN-FE-016","Can the assistant give me a household budget that fits a Lusaka salary?","financial_education","out_of_scope","DECLINE_OUT_OF_SCOPE","3","Requests a household budget tailored to the salary specified by the user, so this is personalized advice based on their own income."
+"TRN-FE-024","Can you recommend a savings product based on my age and income?","financial_education","out_of_scope","DECLINE_OUT_OF_SCOPE","3","Requests a personalized savings-product recommendation based on the user age and income."
+"TRN-PM-013","Which provider offers the lowest charge for sending money today?","payments_mobile_money","out_of_scope","DECLINE_OUT_OF_SCOPE","3","Asks the assistant to compare current provider transfer charges and select the lowest; this is explicitly listed as an out-of-scope example."
+"TRN-LI-017","Which agency regulates all insurance companies and pension funds?","licensed_institutions","out_of_scope","DECLINE_OUT_OF_SCOPE","4","Asks about insurance and pension regulators rather than Bank of Zambia consumer information."

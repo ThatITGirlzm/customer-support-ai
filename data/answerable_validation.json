@@ -1,0 +1,227 @@
+[
+  {
+    "example_id": "AVAL-001",
+    "question": "For an unfair fee or rejected transaction, which provider channel is the starting point?",
+    "split": "validation",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB001"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=aval_001; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-002",
+    "question": "Which authority can review a case once every internal complaint option has been used?",
+    "split": "validation",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB003"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=aval_002; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-003",
+    "question": "How can a member of the public send BoZ a general enquiry?",
+    "split": "validation",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB004"
+    ],
+    "source_ids": [
+      "SRC001"
+    ],
+    "annotation_note": "family=aval_003; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-004",
+    "question": "What treatment should a financial service provider deliver under market-conduct oversight?",
+    "split": "validation",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB008"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=aval_004; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-005",
+    "question": "Which clearing arrangement handles routine electronic fund transfers in batches?",
+    "split": "validation",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB012"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=aval_005; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-006",
+    "question": "What range of payment values is mentioned in the RTGS description?",
+    "split": "validation",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB013"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=aval_006; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-007",
+    "question": "What share of adults used mobile money in the 2025 survey?",
+    "split": "validation",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB014"
+    ],
+    "source_ids": [
+      "SRC008"
+    ],
+    "annotation_note": "family=aval_007; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-008",
+    "question": "Which statute is named for commercial-bank licences?",
+    "split": "validation",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB015"
+    ],
+    "source_ids": [
+      "SRC010"
+    ],
+    "annotation_note": "family=aval_008; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-009",
+    "question": "What can a consumer confirm in the regulator's registered-institutions directory?",
+    "split": "validation",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB016"
+    ],
+    "source_ids": [
+      "SRC007"
+    ],
+    "annotation_note": "family=aval_009; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-010",
+    "question": "Which bodies were involved in the 2026 Financial Literacy Week launch?",
+    "split": "validation",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB017"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=aval_010; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-011",
+    "question": "What can users explore in the Zambian Banknotes educational app?",
+    "split": "validation",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB018"
+    ],
+    "source_ids": [
+      "SRC005"
+    ],
+    "annotation_note": "family=aval_011; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-012",
+    "question": "Which types of services helped support the increase in financial inclusion?",
+    "split": "validation",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB019"
+    ],
+    "source_ids": [
+      "SRC008"
+    ],
+    "annotation_note": "family=aval_012; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-013",
+    "question": "What city and road are given for the Bank of Zambia's main office?",
+    "split": "validation",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB023"
+    ],
+    "source_ids": [
+      "SRC001"
+    ],
+    "annotation_note": "family=aval_013; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-014",
+    "question": "Does the 2024–2027 plan name stronger cyber-security resilience as a priority?",
+    "split": "validation",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB025"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=aval_014; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "AVAL-015",
+    "question": "Do the Bank of Zambia's payment-system oversight activities include mobile-money payments?",
+    "split": "validation",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB029"
+    ],
+    "source_ids": [
+      "SRC014"
+    ],
+    "annotation_note": "family=aval_015; retrieval-only query; one active approved passage supports the request."
+  }
+]

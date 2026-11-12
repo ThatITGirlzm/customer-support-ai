@@ -1,0 +1,452 @@
+[
+  {
+    "example_id": "ATEST-001",
+    "question": "Where should a customer raise a complaint first after unfair treatment by a financial provider?",
+    "split": "test",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB001"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_001; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-002",
+    "question": "When branch or customer-care staff have not resolved an issue, what is the next internal step?",
+    "split": "test",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB002"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_002; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-003",
+    "question": "What must a consumer do before asking BoZ to review a complaint case?",
+    "split": "test",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB003"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_003; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-004",
+    "question": "Is there a web form for making a general enquiry to the regulator?",
+    "split": "test",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB004"
+    ],
+    "source_ids": [
+      "SRC001"
+    ],
+    "annotation_note": "family=atest_004; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-005",
+    "question": "How should providers conduct themselves toward customers, according to the market-conduct description?",
+    "split": "test",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB008"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_005; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-006",
+    "question": "What qualities does the publication associate with a safe financial product?",
+    "split": "test",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB009"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_006; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-007",
+    "question": "How are routine commercial EFT instructions cleared?",
+    "split": "test",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB012"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_007; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-008",
+    "question": "What is the lowest transaction value stated for RTGS?",
+    "split": "test",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB013"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_008; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-009",
+    "question": "How did adult mobile-money use compare in the 2020 and 2025 survey figures?",
+    "split": "test",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB014"
+    ],
+    "source_ids": [
+      "SRC008"
+    ],
+    "annotation_note": "family=atest_009; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-010",
+    "question": "Which regulator oversees commercial banks under the banking legislation?",
+    "split": "test",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB015"
+    ],
+    "source_ids": [
+      "SRC010"
+    ],
+    "annotation_note": "family=atest_010; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-011",
+    "question": "Can the BoZ directory help check the licence category attached to an institution?",
+    "split": "test",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB016"
+    ],
+    "source_ids": [
+      "SRC007"
+    ],
+    "annotation_note": "family=atest_011; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-012",
+    "question": "What message about financial education accompanied the 2026 literacy-week launch?",
+    "split": "test",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB017"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_012; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-013",
+    "question": "On what date did BoZ announce its banknote-learning app?",
+    "split": "test",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB018"
+    ],
+    "source_ids": [
+      "SRC005"
+    ],
+    "annotation_note": "family=atest_013; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-014",
+    "question": "What two kinds of services were linked to the rise in inclusion?",
+    "split": "test",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB019"
+    ],
+    "source_ids": [
+      "SRC008"
+    ],
+    "annotation_note": "family=atest_014; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-015",
+    "question": "Which postal box is listed for BoZ's Head Office in Lusaka?",
+    "split": "test",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB023"
+    ],
+    "source_ids": [
+      "SRC001"
+    ],
+    "annotation_note": "family=atest_015; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-016",
+    "question": "In which town is the regulator's regional office listed?",
+    "split": "test",
+    "intent": "contact_regulator",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB024"
+    ],
+    "source_ids": [
+      "SRC001"
+    ],
+    "annotation_note": "family=atest_016; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-017",
+    "question": "Is dispute resolution included among the strategic plan priorities?",
+    "split": "test",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB025"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_017; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-018",
+    "question": "What does BoZ say payment-system rules should tell users about?",
+    "split": "test",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB029"
+    ],
+    "source_ids": [
+      "SRC014"
+    ],
+    "annotation_note": "family=atest_018; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-019",
+    "question": "For examples such as an illegal charge, which step comes before contacting BoZ?",
+    "split": "test",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB001"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_019; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-020",
+    "question": "Which office within a provider receives an escalated complaint after the branch?",
+    "split": "test",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB002"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_020; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-021",
+    "question": "When can consumers turn to the central bank for case review?",
+    "split": "test",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB003"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_021; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-022",
+    "question": "Besides a general enquiry form, which contact methods does the BoZ page provide?",
+    "split": "test",
+    "intent": "complaints_process",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB004"
+    ],
+    "source_ids": [
+      "SRC001"
+    ],
+    "annotation_note": "family=atest_022; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-023",
+    "question": "What is market-conduct supervision intended to ensure about financial providers?",
+    "split": "test",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB008"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_023; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-024",
+    "question": "How is a financial product described when it is safe for a consumer?",
+    "split": "test",
+    "intent": "consumer_rights",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB009"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_024; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-025",
+    "question": "Which system is used to batch routine commercial transfers?",
+    "split": "test",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB012"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_025; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-026",
+    "question": "What kind of payment need is RTGS designed to serve?",
+    "split": "test",
+    "intent": "payments_mobile_money",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB013"
+    ],
+    "source_ids": [
+      "SRC002"
+    ],
+    "annotation_note": "family=atest_026; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-027",
+    "question": "What adult mobile-money uptake rate did FinScope report for 2025?",
+    "split": "test",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB014"
+    ],
+    "source_ids": [
+      "SRC008"
+    ],
+    "annotation_note": "family=atest_027; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-028",
+    "question": "Which law is given as the basis for licensing commercial banks?",
+    "split": "test",
+    "intent": "licensed_institutions",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB015"
+    ],
+    "source_ids": [
+      "SRC010"
+    ],
+    "annotation_note": "family=atest_028; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-029",
+    "question": "What security-related information is available in the currency app?",
+    "split": "test",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB018"
+    ],
+    "source_ids": [
+      "SRC005"
+    ],
+    "annotation_note": "family=atest_029; retrieval-only query; one active approved passage supports the request."
+  },
+  {
+    "example_id": "ATEST-030",
+    "question": "What formal and informal service pattern accompanied greater inclusion?",
+    "split": "test",
+    "intent": "financial_education",
+    "scenario_type": "ordinary",
+    "expected_action": "ANSWER_FROM_SOURCE",
+    "supporting_passage_ids": [
+      "KB019"
+    ],
+    "source_ids": [
+      "SRC008"
+    ],
+    "annotation_note": "family=atest_030; retrieval-only query; one active approved passage supports the request."
+  }
+]
