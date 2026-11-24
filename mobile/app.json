@@ -1,0 +1,9 @@
+{
+  "expo": {
+    "name": "Averse Support",
+    "slug": "averse-support-mobile",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light"
+  }
+}

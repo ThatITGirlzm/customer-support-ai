@@ -1,4 +1,4 @@
-# Python bytecode and caches
+﻿# Python bytecode and caches
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -7,9 +7,41 @@ __pycache__/
 .venv/
 venv/
 
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Local backups and temporary files
+backups/
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+
 # Local databases and generated logs
 *.db
+*.sqlite
 *.sqlite3
 *.log
 
 data/backups/
+
+# Node / React Native / Expo
+node_modules/
+.expo/
+.expo-shared/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.mobileprovision
+*.orig.*
+web-build/
+.DS_Store
+*.log

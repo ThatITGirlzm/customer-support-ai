@@ -40,7 +40,7 @@ The validator enforces that `scam_fraud_warning` and `human_help_request` passag
 
 Use `data/retrieval_passages.json` as the materialized retrieval input. It must exactly match records from `approved_passages.json` where both `status == "APPROVED"` and `retrieval_enabled == true`. `build_retrieval_dataset.py --check` and `validate_knowledge_base.py` verify this equality. Do not load the broader approved file directly: some approved records are deliberately disabled for sensitive routing or historical-date reasons.
 
-Never index `data/passages_needing_review.json`, `data/excluded_passages.json`, `data/rejected_passages.json`, original snapshots in `data/backups/`, or the passage-level audit CSV. Do not index `data/passages.json` or `data/sources_register.csv`; these are the original Task 1 files and are preserved unchanged.
+Never index `data/passages_needing_review.json`, `data/excluded_passages.json`, `data/rejected_passages.json`, original snapshots in `data/backups/`, or the passage-level audit CSV. The former root `data/passages.json` was an explicitly fictional `EXAMPLE_ONLY_DELETE` placeholder with no code consumers; it has been removed. Its original copy remains in the ignored Day 2 input backup. The header-only `data/sources_register.csv` is also an original Task 1 file; use `data/sources_register_final.csv` for current source references.
 
 ## Safe update workflow
 
