@@ -22,6 +22,7 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import SplashScreen from '../screens/SplashScreen';
 import HomeScreen  from '../screens/HomeScreen';
 import ChatScreen  from '../screens/ChatScreen';
 import AboutScreen from '../screens/AboutScreen';
@@ -38,9 +39,15 @@ const SCREEN_OPTIONS = {
 export default function AppNavigator() {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="Splash"
       screenOptions={SCREEN_OPTIONS}
     >
+      <Stack.Screen
+        name="Splash"
+        component={SplashScreen}
+        options={{ gestureEnabled: false }}
+      />
+
       <Stack.Screen
         name="Home"
         component={HomeScreen}

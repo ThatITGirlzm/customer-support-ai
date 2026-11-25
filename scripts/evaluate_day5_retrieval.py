@@ -77,6 +77,7 @@ def main() -> int:
         method: [
             {
                 "example_id": row["example_id"],
+                "intent": row["intent"],
                 "relevant_passage_ids": row["relevant_passage_ids"],
                 "top_ranked_passage_id": row["ranked"][0]["passage_id"] if row["ranked"] else None,
                 "first_relevant_rank": row["first_relevant_rank"],
@@ -87,6 +88,23 @@ def main() -> int:
         ]
         for method, method_rows in results["per_method"].items()
     }
+    per_intent_summary: dict[str, dict[str, Any]] = {}
+    for method, method_rows in results["per_method"].items():
+        grouped: dict[str, list[dict[str, Any]]] = {}
+        for row in method_rows:
+            grouped.setdefault(row["intent"], []).append(row)
+        per_intent_summary[method] = {
+            intent: {
+                "query_count": len(intent_rows),
+                "hits": sum(bool(row["hit"]) for row in intent_rows),
+                "macro_metrics": {
+                    metric: sum(row["metrics"][metric] for row in intent_rows)
+                    / len(intent_rows)
+                    for metric in sorted(intent_rows[0]["metrics"])
+                },
+            }
+            for intent, intent_rows in sorted(grouped.items())
+        }
     output = {
         "evaluation": "validation_only_retrieval",
         "dataset_version": "day3-v1.1.0 retrieval validation",
@@ -98,6 +116,7 @@ def main() -> int:
         "ndcg": "not calculated; no graded relevance labels are present",
         "k_values": [1, 3],
         "summaries": results["summaries"],
+        "per_intent_summary": per_intent_summary,
         "per_query_summary": per_query_summary,
     }
     print(json.dumps(output, ensure_ascii=False, indent=2, sort_keys=True))

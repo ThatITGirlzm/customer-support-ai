@@ -93,6 +93,9 @@ def evaluate_records(
         identifiers.add(example_id)
         if not isinstance(question, str):
             raise ValueError(f"evaluation record {example_id!r} requires question text")
+        intent = record.get("intent")
+        if not isinstance(intent, str) or not intent.strip():
+            raise ValueError(f"evaluation record {example_id!r} has an invalid intent")
         if not isinstance(relevant, list) or not relevant or not all(
             isinstance(identifier, str) for identifier in relevant
         ):
@@ -117,6 +120,7 @@ def evaluate_records(
             per_method[retriever.method].append(
                 {
                     "example_id": example_id,
+                    "intent": intent,
                     "relevant_passage_ids": sorted(relevant_ids),
                     "ranked": [
                         {"passage_id": result.passage_id, "source_id": result.source_id,

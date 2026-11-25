@@ -68,3 +68,38 @@ def test_runtime_loader_does_not_require_or_restore_softmax() -> None:
     assert "softmax_regression" not in artifact["models"]
     inference = NaiveBayesInference.from_artifact(artifact)
     assert inference.classes == tuple(FIXED_INTENTS)
+
+
+@pytest.mark.parametrize(
+    "question",
+    [
+        "hello",
+        "Hi there!",
+        "Good morning.",
+        "what's your name?",
+        "What is your name",
+        "Who are you?",
+        "How are you doing?",
+    ],
+)
+def test_common_greetings_and_identity_questions_use_existing_out_of_scope_intent(
+    question: str,
+) -> None:
+    inference = NaiveBayesInference.from_artifact(_synthetic_artifact())
+
+    assert inference.predict_intent(question) == "out_of_scope"
+
+
+@pytest.mark.parametrize(
+    "question",
+    [
+        "What are my rights as a bank customer?",
+        "What are my rights as a bank account owner?",
+    ],
+)
+def test_bank_customer_rights_question_keeps_consumer_rights_domain(
+    question: str,
+) -> None:
+    inference = NaiveBayesInference.from_artifact(_synthetic_artifact())
+
+    assert inference.predict_intent(question) == "consumer_rights"

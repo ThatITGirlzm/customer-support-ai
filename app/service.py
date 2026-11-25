@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import logging
+import re
 import uuid
 from dataclasses import dataclass
 from pathlib import Path
@@ -15,11 +16,43 @@ from ml.retrieval import BM25Retriever, Passage, RetrievalResult, TfidfRetriever
 from app.config import Settings
 from app.demo_outbox import DemoOutboxUnavailable, LocalDemoOutbox
 from app.safety import SafetyDecision, SafetyOutcome, SafetyPreflight
-from app.schemas import DemoComplaintRequest, DemonstrationStatus, ProcessRequest, ProcessResponse
+from app.schemas import (
+    Citation,
+    DemoComplaintRequest,
+    DemonstrationStatus,
+    ProcessRequest,
+    ProcessResponse,
+)
 
 
 _LOG = logging.getLogger("averse.application")
 _SENSITIVE_INTENTS = frozenset({"scam_fraud_warning", "human_help_request"})
+
+_GREETING_PATTERNS = (
+    re.compile(r"^(?:hi|hello|hey)(?: there)?[.!?]*$", re.IGNORECASE),
+    re.compile(r"^(?:good morning|good afternoon|good evening)[.!?]*$", re.IGNORECASE),
+    re.compile(r"^how are you(?: doing)?[.!?]*$", re.IGNORECASE),
+)
+_NAME_QUESTION_PATTERNS = (
+    re.compile(r"^what(?:'s| is) your name[.!?]*$", re.IGNORECASE),
+    re.compile(r"^who are you[.!?]*$", re.IGNORECASE),
+    re.compile(r"^what are you called[.!?]*$", re.IGNORECASE),
+)
+_COMPLAINT_WITH_BOZ = re.compile(
+    r"^(?:how do i|how can i|where do i)\s+(?:file|lodge|make|submit)\s+"
+    r"(?:a\s+)?complaints?\s+(?:with|to)\s+(?:the\s+)?(?:bank of zambia|boz)[.!?]*$",
+    re.IGNORECASE,
+)
+_LICENSE_DIRECTORY_QUESTION = re.compile(
+    r"^(?:how do i|how can i|where can i)\s+(?:check|verify|find out)\s+"
+    r"if\s+(?:a\s+)?financial institution\s+is\s+(?:licensed|licenced)[.!?]*$",
+    re.IGNORECASE,
+)
+_BOZ_CONSUMER_MANDATE_QUESTION = re.compile(
+    r"^(?:what is|what are)\s+(?:the\s+)?(?:boz|bank of zambia)\s+"
+    r"consumer protection\s+(?:mandate|role|responsibilities)[.!?]*$",
+    re.IGNORECASE,
+)
 
 
 class IntentClassifier(Protocol):
@@ -86,6 +119,7 @@ class ApplicationService:
         demo_enabled: bool = False,
         demo_recipient_phone: str | None = None,
         demo_outbox: DemoOutbox | None = None,
+        approved_passages: Sequence[Passage] = (),
     ) -> None:
         if max_question_codepoints < 1:
             raise ValueError("max_question_codepoints must be positive")
@@ -96,6 +130,7 @@ class ApplicationService:
         self.demo_enabled = demo_enabled
         self._demo_recipient_phone = demo_recipient_phone
         self.demo_outbox = demo_outbox
+        self.approved_passages = {passage.passage_id: passage for passage in approved_passages}
 
     @staticmethod
     def _request_id() -> str:
@@ -169,6 +204,34 @@ class ApplicationService:
             return self._invalid(request_id, "QUESTION_TOO_LONG")
         return question
 
+    @staticmethod
+    def _smalltalk_response(request_id: str, question: str) -> ProcessResponse | None:
+        normalized = question.strip()
+        if any(pattern.fullmatch(normalized) for pattern in _GREETING_PATTERNS):
+            return ProcessResponse(
+                request_id=request_id,
+                action="DECLINE_OUT_OF_SCOPE",
+                response_text=(
+                    "Hello, I'm Averse, a banking consumer-information assistant for Zambia. "
+                    "I can help with general questions supported by approved Bank of Zambia "
+                    "passages, but I can’t access accounts or carry out transactions. "
+                    "How may I help you?"
+                ),
+                intent=None,
+                reason_code="GREETING",
+            )
+        if any(pattern.fullmatch(normalized) for pattern in _NAME_QUESTION_PATTERNS):
+            return ProcessResponse(
+                request_id=request_id,
+                action="DECLINE_OUT_OF_SCOPE",
+                response_text=(
+                    "Hello, I'm Averse, a banking consumer-information assistant for Zambia."
+                ),
+                intent=None,
+                reason_code="ASSISTANT_IDENTITY",
+            )
+        return None
+
     def process(self, request: ProcessRequest) -> ProcessResponse:
         request_id = self._request_id()
         question_or_error = self._validate_request(request_id, request)
@@ -204,6 +267,22 @@ class ApplicationService:
                 reason_code="UNKNOWN_INTENT",
             )
 
+        if intent == "out_of_scope":
+            smalltalk_response = self._smalltalk_response(request_id, question)
+            if smalltalk_response is not None:
+                return smalltalk_response
+            return ProcessResponse(
+                request_id=request_id,
+                action="DECLINE_OUT_OF_SCOPE",
+                response_text=(
+                    "I’m Averse, a banking consumer-information assistant for Zambia. "
+                    "I can help with general questions supported by approved Bank of Zambia "
+                    "passages, but I can’t access accounts or carry out transactions."
+                ),
+                intent=intent,
+                reason_code="OUT_OF_SCOPE",
+            )
+
         # Classifier authority for user-facing routing remains pending. A
         # sensitive candidate must not cause retrieval or an unapproved
         # referral; return a safe abstention instead.
@@ -225,20 +304,84 @@ class ApplicationService:
             _LOG.error("retrieval failed request_id=%s", request_id)
             return self._unavailable(request_id, "RETRIEVER_UNAVAILABLE")
 
-        return self._evidence_response(request_id, intent, results)
+        return self._evidence_response(request_id, intent, question, results)
 
-    @staticmethod
     def _evidence_response(
-        request_id: str, intent: str, results: Sequence[RetrievalResult]
+        self,
+        request_id: str,
+        intent: str,
+        question: str,
+        results: Sequence[RetrievalResult],
     ) -> ProcessResponse:
-        # PA-05/PA-06 answer permissions remain pending. Candidate results
-        # are intentionally not transformed into factual customer responses.
-        reason = "NO_APPROVED_ANSWER_RULE" if results else "NO_SUPPORTING_PASSAGE"
+        # Only narrow question forms with a direct active-passage mapping may
+        # produce answers. Retrieval rankings alone never authorize a response.
+        if (
+            intent == "complaints_process"
+            and _COMPLAINT_WITH_BOZ.fullmatch(question.strip())
+        ):
+            passage_ids = ("KB001", "KB002", "KB003")
+            limitation = (
+                "These passages describe the escalation sequence; they do not specify "
+                "a direct BoZ filing form or contact details."
+            )
+        elif (
+            intent == "licensed_institutions"
+            and _LICENSE_DIRECTORY_QUESTION.fullmatch(question.strip())
+        ):
+            passage_ids = ("KB016",)
+            limitation = None
+        elif (
+            intent == "consumer_rights"
+            and _BOZ_CONSUMER_MANDATE_QUESTION.fullmatch(question.strip())
+        ):
+            passage_ids = ("KB008", "KB025")
+            limitation = (
+                "These passages describe consumer-protection priorities, not a complete "
+                "statement of the Bank of Zambia's legal mandate."
+            )
+        else:
+            reason = "NO_APPROVED_ANSWER_RULE" if results else "NO_SUPPORTING_PASSAGE"
+            return ProcessResponse(
+                request_id=request_id,
+                action="ABSTAIN_NOT_IN_SOURCES",
+                response_text="The approved passage dataset does not contain a reviewed answer for this request.",
+                intent=intent,
+                reason_code=reason,
+            )
+
+        mapped_passages = [self.approved_passages.get(passage_id) for passage_id in passage_ids]
+        if any(passage is None for passage in mapped_passages):
+            return ProcessResponse(
+                request_id=request_id,
+                action="ABSTAIN_NOT_IN_SOURCES",
+                response_text="The approved passage dataset does not contain a reviewed answer for this request.",
+                intent=intent,
+                reason_code="ANSWER_PASSAGE_UNAVAILABLE",
+            )
+
+        passages = [passage for passage in mapped_passages if passage is not None]
+        response_text = "\n\n".join(passage.text for passage in passages)
+        if limitation:
+            response_text += "\n\n" + limitation
+        citations = [
+            Citation(
+                passage_id=passage.passage_id,
+                source_id=passage.source_id,
+                source_title=passage.source_title,
+                source_url=passage.source_url,
+                publication_date=passage.publication_date,
+                accessed_date=passage.accessed_date,
+                section_or_page=passage.section_or_page,
+            )
+            for passage in passages
+        ]
         return ProcessResponse(
             request_id=request_id,
-            action="ABSTAIN_NOT_IN_SOURCES",
-            response_text="The approved sources do not provide a reviewed answer for this request.",
-            reason_code=reason,
+            action="ANSWER_FROM_SOURCE",
+            response_text=response_text,
+            intent=intent,
+            citations=citations,
+            reason_code="APPROVED_PASSAGE_RULE",
         )
 
     def process_demo_complaint(self, request: DemoComplaintRequest) -> ProcessResponse:
@@ -361,4 +504,5 @@ def build_default_service(settings: Settings) -> ApplicationService:
         demo_enabled=settings.demo_enabled,
         demo_recipient_phone=settings.demo_recipient_phone,
         demo_outbox=outbox,
+        approved_passages=passages,
     )

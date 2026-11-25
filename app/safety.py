@@ -76,6 +76,33 @@ _HUMAN_HELP_PATTERNS = (
 )
 _ACTIVE_SENSITIVE_PATTERNS = (
     re.compile(
+        r"\b(?:someone|somebody|they|a person)\b.{0,25}"
+        r"\b(?:stole|stolen|took|taken)\b.{0,25}"
+        r"\b(?:my|our)\s+(?:(?:bank|debit|credit|payment|atm)\s+)?card\b",
+        re.IGNORECASE | re.DOTALL,
+    ),
+    re.compile(
+        r"\b(?:i|we)\s+(?:have\s+)?(?:lost|misplaced|cannot find|can't find)\s+"
+        r"(?:my|our)\s+(?:(?:bank|debit|credit|payment|atm)\s+)?card\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\b(?:my|our)\s+(?:(?:bank|debit|credit|payment|atm)\s+)?card\b"
+        r".{0,35}\b(?:was|has been|is)\s+(?:lost|stolen|taken)\b",
+        re.IGNORECASE | re.DOTALL,
+    ),
+    re.compile(
+        r"\b(?:unauthori[sz]ed|unrecognised|unrecognized|unknown)\s+"
+        r"(?:bank\s+)?(?:transaction|payment|charge)s?\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\b(?:transaction|payment|charge)\b.{0,40}"
+        r"\b(?:i|we)\s+(?:did not|didn't|do not|don't)\s+"
+        r"(?:make|recognise|recognize)\b",
+        re.IGNORECASE | re.DOTALL,
+    ),
+    re.compile(
         r"\b(?:i|we)\s+(?:was|were|got)\s+(?:scammed|defrauded|phished)\b",
         re.IGNORECASE,
     ),

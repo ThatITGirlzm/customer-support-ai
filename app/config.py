@@ -10,6 +10,10 @@ from pathlib import Path
 
 _DEFAULT_MAX_QUESTION_CODEPOINTS = 2000
 _PHONE_PATTERN = re.compile(r"^\+[1-9][0-9]{7,14}$")
+_DEFAULT_LOCAL_CORS_ORIGINS = (
+    "http://localhost:8081",
+    "http://127.0.0.1:8081",
+)
 
 
 def _boolean(name: str, default: bool = False) -> bool:
@@ -64,10 +68,15 @@ class Settings:
             local_base / "Averse" / "demo-outbox.sqlite3"
         )
 
-        origins = tuple(
-            origin.strip().rstrip("/")
-            for origin in os.getenv("AVESE_CORS_ORIGINS", "").split(",")
-            if origin.strip()
+        raw_origins = os.getenv("AVESE_CORS_ORIGINS")
+        origins = (
+            _DEFAULT_LOCAL_CORS_ORIGINS
+            if raw_origins is None
+            else tuple(
+                origin.strip().rstrip("/")
+                for origin in raw_origins.split(",")
+                if origin.strip()
+            )
         )
         if "*" in origins:
             raise ValueError("AVESE_CORS_ORIGINS must list explicit origins, not a wildcard")

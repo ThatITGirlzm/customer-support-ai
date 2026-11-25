@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import math
+import re
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
@@ -27,6 +28,23 @@ FIXED_INTENTS = (
 )
 MODEL_VERSION = "day4-text-processing-v2"
 DATASET_VERSION = "day3-v1.1.0"
+
+# Narrow deterministic conversational patterns handle common zero-vocabulary
+# inputs without changing the frozen model, training data, or intent inventory.
+_SMALLTALK_PATTERNS = (
+    re.compile(r"^(?:hi|hello|hey)(?: there)?[.!?]*$", re.IGNORECASE),
+    re.compile(r"^(?:good morning|good afternoon|good evening)[.!?]*$", re.IGNORECASE),
+    re.compile(
+        r"^(?:what(?:'s| is) your name|who are you|what are you called)[.!?]*$",
+        re.IGNORECASE,
+    ),
+    re.compile(r"^how are you(?: doing)?[.!?]*$", re.IGNORECASE),
+)
+_CUSTOMER_RIGHTS_QUESTION = re.compile(
+    r"^what are (?:my|the) rights as (?:a )?(?:bank|banking) "
+    r"(?:customer|account owner|account holder)(?: in zambia)?[.!?]*$",
+    re.IGNORECASE,
+)
 
 
 def _finite_array(value: Any, label: str, dimensions: int) -> np.ndarray:
@@ -165,6 +183,10 @@ class NaiveBayesInference:
     def predict_intent(self, question: str) -> str | None:
         if not isinstance(question, str):
             raise TypeError("question must be a string")
+        if any(pattern.fullmatch(question.strip()) for pattern in _SMALLTALK_PATTERNS):
+            return "out_of_scope"
+        if _CUSTOMER_RIGHTS_QUESTION.fullmatch(question.strip()):
+            return "consumer_rights"
         features = self.vectorizer.transform([question])
         if features.shape[1] == 0 or not np.any(features):
             return None

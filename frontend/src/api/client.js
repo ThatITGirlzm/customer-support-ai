@@ -19,7 +19,7 @@
  *
  * This value can be overridden at runtime via the settings screen (future).
  */
-export const BASE_URL = 'http://10.69.147.194:8000';
+export const BASE_URL = 'http://localhost:8000';
 
 
 /** Default request timeout in milliseconds. */
